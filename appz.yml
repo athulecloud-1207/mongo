@@ -1,17 +1,17 @@
 app:
   name: AppzMongoDB
   code: AMDB
-  notify: appz@cloudbourne.co
+  notify: asunil@ecloudcontrol.com
 
 build:
-  version: 4.4
+  version: 8
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: mongo-4.4
+  image_template: mongo-8.0
   
 deploy:
-  context: alpha/DEV
+  context: athulecloud-1207/DEV
   type: statefulset
   replicas: 1
   port:
