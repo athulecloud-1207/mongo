@@ -26,4 +26,4 @@ volumes:
   
 properties:
   revision : 06
-  HOST_NAME : mongo
+  MONGODB_HOST : mongo
