@@ -18,11 +18,11 @@ deploy:
   - 27017
 
 volumes:
-- claim: mongo-data
-  mount: /appz/data
-  name: mongo-data
-  size: 5Gi
-  mode: ReadWriteOnce
+# - claim: mongo-data
+#   mount: /appz/data
+#   name: mongo-data
+#   size: 5Gi
+#   mode: ReadWriteOnce
   
 # - claim: mongo-keys
 #   mount: /appz/keys
