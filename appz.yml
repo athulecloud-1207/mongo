@@ -15,28 +15,28 @@ deploy:
   type: statefulset
   replicas: 1
   port:
-  - 27017
+    - 27017
 
 volumes:
- - claim: mongo-data
-   mount: /appz/data
-   name: mongo-data
-   size: 5Gi
-   mode: ReadWriteOnce
+  - claim: mongo-data
+    mount: /appz/data
+    name: mongo-data
+    size: 5Gi
+    mode: ReadWriteOnce
   
- - claim: mongo-keys
-   mount: /appz/keys
-   name: mongo-keys
-   size: 1Gi
-   mode: ReadWriteOnce
+  - claim: mongo-keys
+    mount: /appz/keys
+    name: mongo-keys
+    size: 1Gi
+    mode: ReadWriteOnce
   
-- claim: mongo-backup
-  mount: /appz/backup
-  name: mongo-backup
-  size: 5Gi
-  mode: ReadWriteOnce
- 
+  - claim: mongo-backup
+    mount: /appz/backup
+    name: mongo-backup
+    size: 5Gi
+    mode: ReadWriteOnce
+
 properties:
-  revision : 07
-  MONGODB_HOST : mongodb-8-0
-  MONGODB_PORT : 27017
+  revision: 07
+  MONGODB_HOST: mongodb-8-0
+  MONGODB_PORT: 27017
