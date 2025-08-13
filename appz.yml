@@ -1,5 +1,5 @@
 app:
-  name: mongodb
+  name: MongoDB
   code: MONGODB
   notify: asunil@ecloudcontrol.com
 
@@ -11,32 +11,32 @@ build:
   image_template: mongo-8.0
   
 deploy:
-  context: athulecloud-1207-dev
+  context: athulecloud-1207/DEV
   type: statefulset
   replicas: 1
   port:
-  - 27017
+    - 27017
 
 volumes:
-- claim: mongo-data
-  mount: /appz/data
-  name: mongo-data
-  size: 5Gi
-  mode: ReadWriteOnce
+  - claim: mongo-data
+    mount: /appz/data
+    name: mongo-data
+    size: 5Gi
+    mode: ReadWriteOnce
   
-- claim: mongo-keys
-  mount: /appz/keys
-  name: mongo-keys
-  size: 1Gi
-  mode: ReadWriteOnce
+  - claim: mongo-keys
+    mount: /appz/keys
+    name: mongo-keys
+    size: 1Gi
+    mode: ReadWriteOnce
   
-- claim: mongo-backup
-  mount: /appz/backup
-  name: mongo-backup
-  size: 5Gi
-  mode: ReadWriteOnce
-  
+  - claim: mongo-backup
+    mount: /appz/backup
+    name: mongo-backup
+    size: 5Gi
+    mode: ReadWriteOnce
+
 properties:
+  revision: 08
   MONGODB_HOST: mongodb-8-0
   MONGODB_PORT: 27017
-  revision : 01
