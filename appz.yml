@@ -5,7 +5,7 @@ app:
 
 build:
   version: 8.0
-  env: UAT
+  env: DEV
   build_file: none
   output_files: output/*.zip
   image_template: mongo-8.0
@@ -13,10 +13,9 @@ build:
 deploy:
   context: athulecloud-1207-dev
   type: statefulset
-  replicas: 3
+  replicas: 1
   port:
   - 27017
-  - 9216
 
 volumes:
 - claim: mongo-data
@@ -58,7 +57,7 @@ properties:
   AUTH_ENABLE: 1
   S3_BUCKET: mongodbstorage
   
-  MONGODB_HOST: 127.0.0.1
+  MONGODB_HOST: mongodb-8-0
   MONGODB_PORT: 27017
   MONGO_BACKUP_TIME: 2
   MONGO_BACKUP_DAYS: 7
