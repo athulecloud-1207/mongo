@@ -38,7 +38,7 @@ volumes:
 
 
 properties:
-  revision: 03
+  revision: 04
   MONGODB_HOST: mongodb-8-0
   MONGODB_PORT: 27017
   DB_USER_ADMIN: admin
