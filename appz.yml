@@ -9,7 +9,7 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: mongo-8.0
-  
+
 deploy:
   context: athulecloud-1207/DEV
   type: statefulset
@@ -23,30 +23,29 @@ volumes:
     name: mongo-data
     size: 5Gi
     mode: ReadWriteOnce
-  
+
   - claim: mongo-keys
     mount: /appz/keys
     name: mongo-keys
     size: 1Gi
     mode: ReadWriteOnce
-  
+
   - claim: mongo-backup
     mount: /appz/backup
     name: mongo-backup
     size: 5Gi
     mode: ReadWriteOnce
 
-
 properties:
   revision: 06
   MONGODB_HOST: mongodb-8-0
   MONGODB_PORT: 27017
   DB_USER_ADMIN: admin
-  DB_USER_ADMIN_PASSWORD: 
+  DB_USER_ADMIN_PASSWORD:
     vault: DB_USER_ADMIN_PASSWORD
-  MONGO_USER_PASSWORD: 
+  MONGO_USER_PASSWORD:
     vault: MONGO_USER_PASSWORD
-  AUTH_KEY: 
+  AUTH_KEY:
     vault: AUTH_KEY
   ENCRYPTION_KEY:
     vault: ENCRYPTION_KEY
