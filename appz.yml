@@ -37,7 +37,7 @@ volumes:
     mode: ReadWriteOnce
 
 properties:
-  revision: 07
+  revision: 08
   MONGODB_HOST: mongodb-8-0
   MONGODB_PORT: 27017
   DB_USER_ADMIN: admin
