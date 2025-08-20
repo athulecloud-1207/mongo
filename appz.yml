@@ -49,4 +49,4 @@ properties:
     vault: AUTH_KEY
   ENCRYPTION_KEY:
     vault: ENCRYPTION_KEY
-  AUTH_ENABLE: 1
+  AUTH_ENABLE: 0
